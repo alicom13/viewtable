@@ -1,21 +1,29 @@
-# ViewTable
+# ViewTable v1.0.0
 
-ViewTable adalah library JavaScript yang sangat ringan dan tidak memiliki dependensi (zero-dependency) untuk membuat tabel HTML menjadi responsif. Ia secara otomatis mengubah tabel standar menjadi tata letak kartu (card layout) yang ramah di perangkat mobile.
+![ViewTable Demo](https://img.shields.io/badge/ViewTable-v1.0.0-blue)
+![Zero Dependency](https://img.shields.io/badge/Zero-Dependency-green)
+![MIT License](https://img.shields.io/badge/License-MIT-yellow)
 
-## Fitur
+A lightweight, **zero-dependency** JavaScript library that makes HTML tables responsive. Automatically converts standard tables into mobile-friendly layouts with expandable rows.
 
-- 🚀 **Zero Dependency**: Tidak memerlukan jQuery atau library lain.
-- 🎯 **Auto-Initialization**: Cukup tambahkan atribut dan library akan bekerja.
-- ⚙️ **Konfigurasi Sederhana**: Atur tampilan melalui atribut `data-*` di tag `<table>`.
-- 📱 **Responsif Otomatis**: Mendeteksi ukuran layar dan beralih tampilan dengan mulus.
-- 🎨 **CSS yang Mudah Dikustomisasi**: Gunakan kelas CSS yang sudah didefinisikan untuk menyesuaikan gaya.
+## 🚀 Features
 
-## Cara Penggunaan
+- **📱 Fully Responsive** - Auto-switches to mobile view at 768px
+- **⚡ Zero Dependencies** - Pure vanilla JavaScript
+- **🎯 Configurable Columns** - Choose which columns to show on mobile
+- **🔧 Easy Setup** - Just add `data-viewtable` attribute
+- **🎨 Customizable** - Extensive CSS customization options
+- **🚀 Performance Optimized** - Efficient rendering and event handling
+- **📖 Clean API** - Public methods for manual control
 
-### 1. Include File
+## 🏁 Quick Start
 
-Letakkan file `viewtable.css` dan `viewtable.js` di proyek Anda dan sertakan di halaman HTML.
+### 1. Installation
 
+**Via CDN:**
 ```html
-<link rel="stylesheet" href="path/to/viewtable.css">
-<script src="path/to/viewtable.js"></script>
+<!-- CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/viewtable-js@1.0.0/viewtable.css">
+
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/viewtable-js@1.0.0/viewtable.js"></script>
