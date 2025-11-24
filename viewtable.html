@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViewTable Demo</title>
+    <link rel="stylesheet" href="viewtable.css">
+</head>
+<body>
+
+<h1>ViewTable Demo</h1>
+<p>Perkecil ukuran browser untuk melihat perubahan dari tabel menjadi kartu.</p>
+
+<!-- Tabel dengan konfigurasi ViewTable -->
+<table data-viewtable data-visible-columns="2" data-mobile-title="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nama Produk</th>
+            <th>SKU</th>
+            <th>Harga</th>
+            <th>Stok</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Laptop Pro X</td>
+            <td>LPX-001</td>
+            <td>Rp 25.000.000</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Mouse Wireless</td>
+            <td>MSW-002</td>
+            <td>Rp 500.000</td>
+            <td>200</td>
+        </tr>
+    </tbody>
+</table>
+
+<script src="viewtable.js"></script>
+
+</body>
+</html>
