@@ -3,44 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ViewTable Demo</title>
+    <title>ViewTable v1.0.0 Demo</title>
     <link rel="stylesheet" href="viewtable.css">
+    <style>
+        body {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #f8f9fa;
+        }
+        .demo-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        h1 { color: #004085; }
+        .info-box {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+    </style>
 </head>
 <body>
+    <div class="demo-container">
+        <h1>ViewTable v1.0.0 - Final Demo</h1>
+        
+        <div class="info-box">
+            <strong>Fitur Final:</strong> Tabel responsif, 3 kolom visible di mobile, expandable rows, zero dependency.
+        </div>
 
-<h1>ViewTable Demo</h1>
-<p>Perkecil ukuran browser untuk melihat perubahan dari tabel menjadi kartu.</p>
+        <!-- Tabel Demo -->
+        <table data-viewtable 
+               data-mobile-cols="ID,Nama Produk,Harga" 
+               data-visible-columns="3"
+               data-breakpoint="768">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nama Produk</th>
+                    <th>Kategori</th>
+                    <th>Harga</th>
+                    <th>Stok</th>
+                    <th>Rating</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#P-001</td>
+                    <td><strong>Laptop Gaming Pro X</strong></td>
+                    <td>Elektronik</td>
+                    <td>Rp 15.999.000</td>
+                    <td>125 unit</td>
+                    <td>★★★★☆</td>
+                    <td><span class="badge badge-success">Aktif</span></td>
+                </tr>
+                <tr>
+                    <td>#P-002</td>
+                    <td><strong>Smartphone Flagship</strong></td>
+                    <td>Elektronik</td>
+                    <td>Rp 8.499.000</td>
+                    <td>45 unit</td>
+                    <td>★★★★★</td>
+                    <td><span class="badge badge-success">Aktif</span></td>
+                </tr>
+                <tr>
+                    <td>#P-003</td>
+                    <td><strong>Tablet Premium</strong></td>
+                    <td>Elektronik</td>
+                    <td>Rp 6.299.000</td>
+                    <td>0 unit</td>
+                    <td>★★★☆☆</td>
+                    <td><span class="badge badge-danger">Habis</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-<!-- Tabel dengan konfigurasi ViewTable -->
-<table data-viewtable data-visible-columns="2" data-mobile-title="1">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nama Produk</th>
-            <th>SKU</th>
-            <th>Harga</th>
-            <th>Stok</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1</td>
-            <td>Laptop Pro X</td>
-            <td>LPX-001</td>
-            <td>Rp 25.000.000</td>
-            <td>50</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Mouse Wireless</td>
-            <td>MSW-002</td>
-            <td>Rp 500.000</td>
-            <td>200</td>
-        </tr>
-    </tbody>
-</table>
-
-<script src="viewtable.js"></script>
-
+    <script src="viewtable.js"></script>
 </body>
 </html>
