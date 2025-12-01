@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViewTable Examples - Basic & Complex Tables</title>
+    <link rel="stylesheet" href="viewtable.css">
+    <style>
+        body { padding: 20px; font-family: sans-serif; background: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .example-section { 
+            background: white; 
+            padding: 25px; 
+            margin: 30px 0; 
+            border-radius: 8px; 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
+        }
+        h1, h2, h3 { color: #333; margin-bottom: 15px; }
+        .note { 
+            background: #fff3cd; 
+            border: 1px solid #ffeaa7; 
+            padding: 12px 15px; 
+            border-radius: 6px; 
+            margin: 15px 0; 
+            font-size: 0.9em; 
+        }
+        .code-block {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #004085;
+            margin: 15px 0;
+            font-family: monospace;
+            font-size: 0.9em;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ViewTable Examples</h1>
+        <p>Contoh table biasa dan table kompleks dengan colspan/rowspan</p>
+
+        <!-- EXAMPLE 1: BASIC TABLE -->
+        <div class="example-section">
+            <h2>1. Table Biasa (Simple)</h2>
+            <p>Table tanpa colspan/rowspan - cocok untuk data sederhana</p>
+            
+            <div class="note">
+                <strong>Auto Mode:</strong> ViewTable otomatis ambil 3 kolom pertama
+            </div>
+
+            <table class="viewtable" data-viewtable>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nama Lengkap</th>
+                        <th>Email</th>
+                        <th class="viewtable-detail">Telepon</th>
+                        <th class="viewtable-detail">Alamat</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-xs">USR-001</td>
+                        <td class="font-semibold">Ahmad Wijaya</td>
+                        <td>ahmad.wijaya@email.com</td>
+                        <td>08123456789</td>
+                        <td>Jl. Sudirman No. 123, Jakarta</td>
+                        <td><span class="badge badge-success">Aktif</span></td>
+                    </tr>
+                    <tr>
+                        <td class="text-xs">USR-002</td>
+                        <td class="font-semibold">Sari Dewi</td>
+                        <td>sari.dewi@email.com</td>
+                        <td>08129876543</td>
+                        <td>Jl. Thamrin No. 45, Bandung</td>
+                        <td><span class="badge badge-success">Aktif</span></td>
+                    </tr>
+                    <tr>
+                        <td class="text-xs">USR-003</td>
+                        <td class="font-semibold">Budi Santoso</td>
+                        <td>budi.santoso@email.com</td>
+                        <td>08111222333</td>
+                        <td>Jl. Gatot Subroto No. 78, Surabaya</td>
+                        <td><span class="badge badge-warning">Pending</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="code-block">
+&lt;table class="viewtable" data-viewtable&gt;<br>
+&nbsp;&nbsp;&lt;thead&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;ID&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Nama Lengkap&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Email&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th class="viewtable-detail"&gt;Telepon&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th class="viewtable-detail"&gt;Alamat&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Status&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+&nbsp;&nbsp;&lt;/thead&gt;<br>
+&lt;/table&gt;
+            </div>
+        </div>
+
+        <!-- EXAMPLE 2: BASIC WITH CUSTOM COLUMNS -->
+        <div class="example-section">
+            <h2>2. Table Biasa - Custom Columns</h2>
+            <p>Mengatur manual kolom yang ditampilkan di mobile</p>
+            
+            <div class="note">
+                <strong>Manual Control:</strong> Gunakan <code>data-mobile-cols</code> untuk kontrol penuh
+            </div>
+
+            <table class="viewtable" data-viewtable data-mobile-cols="Kode,Nama Produk,Harga,Status">
+                <thead>
+                    <tr>
+                        <th>Kode</th>
+                        <th>Nama Produk</th>
+                        <th>Kategori</th>
+                        <th>Harga</th>
+                        <th>Stok</th>
+                        <th>Supplier</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-xs">PROD-001</td>
+                        <td class="font-semibold">Laptop Gaming RX-500</td>
+                        <td>Elektronik</td>
+                        <td>Rp 12.500.000</td>
+                        <td><span class="badge badge-success">15</span></td>
+                        <td class="text-sm">TechSupplier Inc.</td>
+                        <td><span class="badge badge-success">Tersedia</span></td>
+                    </tr>
+                    <tr>
+                        <td class="text-xs">PROD-002</td>
+                        <td class="font-semibold">Smartphone Pro X</td>
+                        <td>Elektronik</td>
+                        <td>Rp 8.999.000</td>
+                        <td><span class="badge badge-warning">8</span></td>
+                        <td class="text-sm">MobileTech Corp</td>
+                        <td><span class="badge badge-warning">Stok Terbatas</span></td>
+                    </tr>
+                    <tr>
+                        <td class="text-xs">PROD-003</td>
+                        <td class="font-semibold">Tablet Mini</td>
+                        <td>Elektronik</td>
+                        <td>Rp 5.500.000</td>
+                        <td><span class="badge badge-danger">0</span></td>
+                        <td class="text-sm">Gadget Store</td>
+                        <td><span class="badge badge-danger">Habis</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="code-block">
+&lt;table class="viewtable" data-viewtable data-mobile-cols="Kode,Nama Produk,Harga,Status"&gt;<br>
+&nbsp;&nbsp;&lt;thead&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Kode&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Nama Produk&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Kategori&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Harga&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Stok&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Supplier&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Status&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+&nbsp;&nbsp;&lt;/thead&gt;<br>
+&lt;/table&gt;
+            </div>
+        </div>
+
+        <!-- EXAMPLE 3: COMPLEX TABLE WITH COLSPAN -->
+        <div class="example-section">
+            <h2>3. Table Kompleks - Colspan & Rowspan</h2>
+            <p>Table dengan struktur kompleks, <strong>wajib pakai data-mobile-cols</strong></p>
+            
+            <div class="note">
+                <strong>Important:</strong> Untuk table kompleks dengan colspan/rowspan, selalu gunakan <code>data-mobile-cols</code>
+            </div>
+
+            <table class="viewtable" data-viewtable data-mobile-cols="No,Nama Lengkap,Jabatan,Status">
+                <thead>
+                    <tr>
+                        <th rowspan="2">No</th>
+                        <th colspan="3">Biodata Siswa</th>
+                        <th colspan="2">Orang Tua</th>
+                    </tr>
+                    <tr>
+                        <th>Nama Lengkap</th>
+                        <th class="viewtable-detail">Jenis Kelamin</th>
+                        <th>Jabatan</th>
+                        <th class="viewtable-detail">Ayah</th>
+                        <th>Ibu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="font-semibold">1</td>
+                        <td class="font-semibold">Ahmad Wijaya</td>
+                        <td>Laki-laki</td>
+                        <td><span class="badge badge-success">Ketua</span></td>
+                        <td class="text-sm">Budi Santoso</td>
+                        <td class="text-sm">Sari Dewi</td>
+                    </tr>
+                    <tr>
+                        <td class="font-semibold">2</td>
+                        <td class="font-semibold">Maya Sari</td>
+                        <td>Perempuan</td>
+                        <td><span class="badge badge-info">Wakil</span></td>
+                        <td class="text-sm">Joko Widodo</td>
+                        <td class="text-sm">Ani Susanti</td>
+                    </tr>
+                    <tr>
+                        <td class="font-semibold">3</td>
+                        <td class="font-semibold">Rizki Pratama</td>
+                        <td>Laki-laki</td>
+                        <td><span class="badge badge-warning">Sekretaris</span></td>
+                        <td class="text-sm">Agus Salim</td>
+                        <td class="text-sm">Dewi Lestari</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="code-block">
+&lt;table class="viewtable" data-viewtable data-mobile-cols="No,Nama Lengkap,Jabatan,Status"&gt;<br>
+&nbsp;&nbsp;&lt;thead&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th rowspan="2"&gt;No&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th colspan="3"&gt;Biodata Siswa&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th colspan="2"&gt;Orang Tua&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Nama Lengkap&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th class="viewtable-detail"&gt;Jenis Kelamin&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Jabatan&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th class="viewtable-detail"&gt;Ayah&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Ibu&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+&nbsp;&nbsp;&lt;/thead&gt;<br>
+&lt;/table&gt;
+            </div>
+        </div>
+
+        <!-- EXAMPLE 4: SUPER COMPLEX TABLE -->
+        <div class="example-section">
+            <h2>4. Table Super Kompleks - Multi-level Headers</h2>
+            <p>Table dengan multiple colspan levels, <strong>harus pakai data-mobile-cols</strong></p>
+
+            <table class="viewtable" data-viewtable data-mobile-cols="Kode,Nama Produk,Stok,Status">
+                <thead>
+                    <tr>
+                        <th rowspan="3">Kode</th>
+                        <th rowspan="3">Nama Produk</th>
+                        <th colspan="4">Informasi Produk</th>
+                        <th rowspan="3">Status</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Harga</th>
+                        <th colspan="2">Inventory</th>
+                    </tr>
+                    <tr>
+                        <th>Beli</th>
+                        <th>Jual</th>
+                        <th>Stok</th>
+                        <th class="viewtable-detail">Safety Stock</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-xs font-semibold">P-001</td>
+                        <td class="font-semibold">Laptop Gaming RX-500</td>
+                        <td class="text-sm">Rp 10.000.000</td>
+                        <td class="text-sm">Rp 12.500.000</td>
+                        <td><span class="badge badge-success">15</span></td>
+                        <td class="text-xs">5</td>
+                        <td><span class="badge badge-success">Tersedia</span></td>
+                    </tr>
+                    <tr>
+                        <td class="text-xs font-semibold">P-002</td>
+                        <td class="font-semibold">Smartphone Pro X</td>
+                        <td class="text-sm">Rp 7.500.000</td>
+                        <td class="text-sm">Rp 8.999.000</td>
+                        <td><span class="badge badge-warning">8</span></td>
+                        <td class="text-xs">3</td>
+                        <td><span class="badge badge-warning">Stok Terbatas</span></td>
+                    </tr>
+                    <tr>
+                        <td class="text-xs font-semibold">P-003</td>
+                        <td class="font-semibold">Tablet Mini</td>
+                        <td class="text-sm">Rp 4.000.000</td>
+                        <td class="text-sm">Rp 5.500.000</td>
+                        <td><span class="badge badge-danger">0</span></td>
+                        <td class="text-xs">2</td>
+                        <td><span class="badge badge-danger">Habis</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="code-block">
+&lt;table class="viewtable" data-viewtable data-mobile-cols="Kode,Nama Produk,Stok,Status"&gt;<br>
+&nbsp;&nbsp;&lt;thead&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th rowspan="3"&gt;Kode&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th rowspan="3"&gt;Nama Produk&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th colspan="4"&gt;Informasi Produk&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th rowspan="3"&gt;Status&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th colspan="2"&gt;Harga&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th colspan="2"&gt;Inventory&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Beli&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Jual&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Stok&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th class="viewtable-detail"&gt;Safety Stock&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+&nbsp;&nbsp;&lt;/thead&gt;<br>
+&lt;/table&gt;
+            </div>
+        </div>
+
+        <!-- USAGE GUIDELINES -->
+        <div class="example-section">
+            <h2>📋 Panduan Penggunaan ViewTable</h2>
+            
+            <h3>Untuk Table Biasa:</h3>
+            <ul>
+                <li><code>&lt;table class="viewtable" data-viewtable&gt;</code> - Auto mode</li>
+                <li>Gunakan <code>class="viewtable-detail"</code> untuk kolom secondary</li>
+                <li>Default: 3 kolom pertama yang bukan detail</li>
+            </ul>
+            
+            <h3>Untuk Table Kompleks (colspan/rowspan):</h3>
+            <ul>
+                <li>Selalu gunakan <code>data-mobile-cols="col1,col2,col3"</code></li>
+                <li>Nama kolom harus exact match dengan <code>&lt;th&gt;</code> text</li>
+                <li>Urutan di <code>data-mobile-cols</code> menentukan urutan di mobile</li>
+            </ul>
+            
+            <h3>Best Practices:</h3>
+            <ul>
+                <li>Gunakan <code>text-sm</code>, <code>text-xs</code> untuk text kecil</li>
+                <li>Gunakan <code>font-semibold</code> untuk emphasis</li>
+                <li>Gunakan badges untuk status/numerik penting</li>
+                <li>Max 4 kolom visible di mobile</li>
+                <li>Test di berbagai ukuran layar</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script src="viewtable.js"></script>
+</body>
+</html>
